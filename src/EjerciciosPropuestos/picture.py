@@ -1,7 +1,7 @@
 from colors import *
 class Picture:
   def __init__(self, img):
-    self.img = img;
+    self.img = img
 
   def __eq__(self, other):
     return self.img == other.img
@@ -45,11 +45,10 @@ class Picture:
     return Picture([repeatStr(n+1, self.img[i]) for i in range(len(self.img))])
 
   def verticalRepeat(self, n):
-    return Picture(None)
+    return Picture(self.img*(n+1))
 
   #Extra: Sólo para realmente viciosos 
   def rotate(self):
     """Devuelve una figura rotada en 90 grados, puede ser en sentido horario
     o antihorario"""
     return Picture(None)
-
