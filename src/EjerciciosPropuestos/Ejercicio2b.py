@@ -8,3 +8,6 @@ Requirements:
 * up()
 * verticalMirror()
 """
+
+component = knight.join(knight.negative())
+draw(component.up(component.verticalMirror()))

@@ -13,11 +13,12 @@ class Picture:
 
   def verticalMirror(self):
     """ Devuelve el espejo vertical de la imagen """
-    return Picture(self.img[::-1])
+    invertStr = lambda s: s[::-1]
+    return Picture([invertStr(self.img[i]) for i in range(len(self.img))])
 
   def horizontalMirror(self):
     """ Devuelve el espejo horizontal de la imagen """
-    return Picture(None)
+    return Picture(self.img[::-1])
 
   def negative(self):
     """ Devuelve un negativo de la imagen """
