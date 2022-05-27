@@ -1,4 +1,4 @@
 from interpreter import draw
 from chessPictures import *
-from Ejercicio2f import battleField
 
+draw(square.negative().under(queen.under(king)).horizontalMirror().horizontalRepeat(4).rotate())
