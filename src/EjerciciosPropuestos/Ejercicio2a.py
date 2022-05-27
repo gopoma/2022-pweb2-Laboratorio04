@@ -8,4 +8,5 @@ Requirements:
 * up()
 """
 
-draw(king.join(queen.negative()))
+component = knight.join(knight.negative())
+draw(component.up(component.negative()))
