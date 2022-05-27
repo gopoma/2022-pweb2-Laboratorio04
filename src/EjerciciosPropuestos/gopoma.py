@@ -1,4 +1,4 @@
 from interpreter import draw
 from chessPictures import *
 
-draw(king.verticalRepeat(4))
+draw(king.negative().horizontalRepeat(4).rotate())
