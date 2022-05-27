@@ -6,5 +6,4 @@ Requirements:
 horizontalRepeat()
 """
 
-n = 4 - 1
-draw(queen.horizontalRepeat(n))
+draw(queen.horizontalRepeat(3))
