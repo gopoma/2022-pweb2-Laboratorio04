@@ -21,7 +21,9 @@ class Picture:
 
   def negative(self):
     """ Devuelve un negativo de la imagen """
-    return Picture(None)
+    invertString = lambda s: "".join([self._invColor(s[i]) for i in range(len(s))])
+
+    return Picture([invertString(self.img[i]) for i in range(len(self.img))])
 
   def join(self, p):
     """ Devuelve una nueva figura poniendo la figura del argumento 

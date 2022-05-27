@@ -8,4 +8,4 @@ Requirements:
 * up()
 """
 
-draw(king.join(queen))
+draw(king.join(queen.negative()))
