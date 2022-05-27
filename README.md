@@ -54,4 +54,5 @@ verticalRepeat() [✔]
 ![Ejercicio2g](./img/Ejercicio2g.png)
 
 * Reto en Clase:
+
 ![classroomChallenge](./img/classroomChallenge.png)
