@@ -21,7 +21,7 @@ verticalRepeat() [✔]
 ```
 * rotate():
 
-![rotatedChallenge](./img/rotatedChallenge.png)
+![rotated](./img/rotated.png)
 
 * **Ejercicios 2: Usando únicamente los métodos de los objetos de la clase Picture dibuje las siguientes figuras (invoque a draw)**:
 
@@ -53,6 +53,6 @@ verticalRepeat() [✔]
 
 ![Ejercicio2g](./img/Ejercicio2g.png)
 
-* Reto en Clase:
+* Aditivo:
 
-![classroomChallenge](./img/classroomChallenge.png)
+![additive](./img/additive.png)
