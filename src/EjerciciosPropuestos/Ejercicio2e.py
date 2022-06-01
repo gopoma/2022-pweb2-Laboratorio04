@@ -1,8 +1,15 @@
 from interpreter import draw
 from chessPictures import *
 
-component = square.negative().join(square)
-templateLineBlackFirst = component.join(component).join(component).join(component)
+"""
+Requirements:
+  * negative()
+  * join()
+  * horizontalRepeat()
+  ~With Python Modules~
+  * verticalMirror() [Optional]
+  * rotate() [Optional]
+"""
 
-if __name__ == "__main__":
-  draw(templateLineBlackFirst)
+componentBlackFirst = square.negative().join(square).horizontalRepeat(3)
+draw(componentBlackFirst)

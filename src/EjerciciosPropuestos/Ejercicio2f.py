@@ -1,13 +1,10 @@
 from interpreter import draw
 from chessPictures import *
 
-firstLayerBlock = square.join(square.negative())
-firstLayerComponent = firstLayerBlock.join(firstLayerBlock).join(firstLayerBlock).join(firstLayerBlock)
+# We would import cWF and cWB from Ejercicio2d and Ejercicio2e
+componentWhiteFirst = square.join(square.negative()).horizontalRepeat(3);
+componentBlackFirst = square.negative().join(square).horizontalRepeat(3);
+componentWhiteBlack = componentWhiteFirst.up(componentBlackFirst)
+battleField = componentWhiteBlack.up(componentWhiteBlack)
 
-secondLayerBlock = square.negative().join(square)
-secondLayerComponent = secondLayerBlock.join(secondLayerBlock).join(secondLayerBlock).join(secondLayerBlock)
-
-battleField = firstLayerComponent.up(secondLayerComponent).up(firstLayerComponent).up(secondLayerComponent)
-
-if __name__ == "__main__":
-  draw(battleField)
+draw(battleField)

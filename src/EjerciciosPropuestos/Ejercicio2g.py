@@ -1,26 +1,31 @@
 from interpreter import draw
 from chessPictures import *
-from Ejercicio2d import templateLineWhiteFirst
-from Ejercicio2e import templateLineBlackFirst
-from Ejercicio2f import battleField
 
-mainEscort = [rock, knight, bishop, queen, king, bishop, knight, rock]
+"""
+Requirements:
+  * join()
+  * negative()
+  * horizontalRepeat()
+  * up()
+  * under()
+"""
 
-mainEscortWhite = mainEscort[0]
-mainEscortBlack = mainEscort[0].negative()
-pawnEscortWhite = pawn
-pawnEscortBlack = pawn.negative()
+# We would import cWF and cWB from Ejercicio2d and Ejercicio2e,
+# also battleField from Ejercicio2f
+componentWhiteFirst = square.join(square.negative()).horizontalRepeat(3)
+componentBlackFirst = square.negative().join(square).horizontalRepeat(3)
+componentWhiteBlack = componentWhiteFirst.up(componentBlackFirst)
+battleField = componentWhiteBlack.up(componentWhiteBlack)
 
-for i in range(1, len(mainEscort)):
-  mainEscortWhite = mainEscortWhite.join(mainEscort[i])
-  mainEscortBlack = mainEscortBlack.join(mainEscort[i].negative())
-  pawnEscortWhite = pawnEscortWhite.join(pawn)
-  pawnEscortBlack = pawnEscortBlack.join(pawn.negative())
+mainEscortWhite = rock.join(knight).join(bishop).join(queen).join(king).join(bishop).join(knight).join(rock)
+pawnEscortWhite = pawn.horizontalRepeat(7)
+mainEscortBlack = mainEscortWhite.negative()
+pawnEscortBlack = pawnEscortWhite.negative()
 
-firstLayer = templateLineWhiteFirst.under(mainEscortBlack)
-lastLayer = templateLineBlackFirst.under(mainEscortWhite)
-pawnLayerBlack = templateLineBlackFirst.under(pawnEscortBlack)
-pawnLayerWhite = templateLineWhiteFirst.under(pawnEscortWhite)
+firstLayer = componentWhiteFirst.under(mainEscortBlack)
+pawnLayerBlack = componentBlackFirst.under(pawnEscortBlack)
+pawnLayerWhite = componentWhiteFirst.under(pawnEscortWhite)
+lastLayer = componentBlackFirst.under(mainEscortWhite)
 
 completedBoard = firstLayer.up(pawnLayerBlack).up(battleField).up(pawnLayerWhite).up(lastLayer)
 draw(completedBoard)

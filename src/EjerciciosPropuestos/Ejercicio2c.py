@@ -3,7 +3,7 @@ from chessPictures import *
 
 """
 Requirements:
-horizontalRepeat()
+* horizontalRepeat()
 """
 
 draw(queen.horizontalRepeat(3))
